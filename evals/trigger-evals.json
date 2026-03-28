@@ -1,0 +1,146 @@
+{
+  "skill_name": "skill-quality-standard",
+  "description": "Trigger evaluation cases for skill-quality-standard. Tests that the skill is selected when users ask about building skills, debugging triggers, or evaluating skill quality — and NOT selected for unrelated tasks.",
+  "cases": [
+    {
+      "id": "trigger-001",
+      "query": "I want to build a new skill for generating weekly summary reports",
+      "expected": "should_trigger",
+      "rationale": "Direct request to build a new skill",
+      "split": "train"
+    },
+    {
+      "id": "trigger-002",
+      "query": "why isn't my skill being triggered when I ask about stock analysis",
+      "expected": "should_trigger",
+      "rationale": "Debugging skill trigger failure — core use case",
+      "split": "train"
+    },
+    {
+      "id": "trigger-003",
+      "query": "how do I write a good skill description that actually gets selected",
+      "expected": "should_trigger",
+      "rationale": "Asking about description writing — explicitly covered",
+      "split": "train"
+    },
+    {
+      "id": "trigger-004",
+      "query": "my skill's trigger rate is too low, how do I fix it",
+      "expected": "should_trigger",
+      "rationale": "Trigger rate improvement — core topic",
+      "split": "train"
+    },
+    {
+      "id": "trigger-005",
+      "query": "what's the three-layer architecture for OpenClaw skills",
+      "expected": "should_trigger",
+      "rationale": "Three-layer architecture is Module 2 of this skill",
+      "split": "train"
+    },
+    {
+      "id": "trigger-006",
+      "query": "how do I commission a skill properly before adding it to capabilities",
+      "expected": "should_trigger",
+      "rationale": "Commissioning is Module 4",
+      "split": "train"
+    },
+    {
+      "id": "trigger-007",
+      "query": "I need to evaluate my skill quality, where do I start",
+      "expected": "should_trigger",
+      "rationale": "Skill quality evaluation — directly in title and description",
+      "split": "train"
+    },
+    {
+      "id": "trigger-008",
+      "query": "prove that my skill works before I mark it as activated",
+      "expected": "should_trigger",
+      "rationale": "Evidence-based commissioning — Step 3",
+      "split": "test"
+    },
+    {
+      "id": "trigger-009",
+      "query": "what are the skill design principles I should follow",
+      "expected": "should_trigger",
+      "rationale": "Design principles are explicitly mentioned in description",
+      "split": "test"
+    },
+    {
+      "id": "trigger-010",
+      "query": "what goes in references versus assets in a skill directory",
+      "expected": "should_trigger",
+      "rationale": "Three-layer architecture question — Module 2",
+      "split": "test"
+    },
+    {
+      "id": "no-trigger-001",
+      "query": "use the ghost-blog skill to publish my article about investing",
+      "expected": "should_not_trigger",
+      "rationale": "Using an existing skill to solve a business problem — explicitly excluded",
+      "split": "train"
+    },
+    {
+      "id": "no-trigger-002",
+      "query": "run the premarket scan for today",
+      "expected": "should_not_trigger",
+      "rationale": "Stock market task, completely unrelated to skill development",
+      "split": "train"
+    },
+    {
+      "id": "no-trigger-003",
+      "query": "translate this paragraph to Chinese",
+      "expected": "should_not_trigger",
+      "rationale": "Translation task — unrelated to skill development",
+      "split": "train"
+    },
+    {
+      "id": "no-trigger-004",
+      "query": "generate a cover image for my article",
+      "expected": "should_not_trigger",
+      "rationale": "Image generation task — unrelated",
+      "split": "train"
+    },
+    {
+      "id": "no-trigger-005",
+      "query": "what's the stock price of 603496",
+      "expected": "should_not_trigger",
+      "rationale": "Stock price lookup — completely unrelated",
+      "split": "train"
+    },
+    {
+      "id": "no-trigger-006",
+      "query": "write a python script to process CSV files",
+      "expected": "should_not_trigger",
+      "rationale": "General coding task — unrelated to skill development",
+      "split": "train"
+    },
+    {
+      "id": "no-trigger-007",
+      "query": "send an email to the team about the meeting tomorrow",
+      "expected": "should_not_trigger",
+      "rationale": "Communication task — unrelated",
+      "split": "test"
+    },
+    {
+      "id": "no-trigger-008",
+      "query": "summarize this article about AI in healthcare",
+      "expected": "should_not_trigger",
+      "rationale": "Content summarization — not skill development",
+      "split": "test"
+    },
+    {
+      "id": "no-trigger-009",
+      "query": "what did we decide last week about the product roadmap",
+      "expected": "should_not_trigger",
+      "rationale": "Memory recall task — unrelated",
+      "split": "test"
+    },
+    {
+      "id": "no-trigger-010",
+      "query": "help me think through the restaurant expansion strategy",
+      "expected": "should_not_trigger",
+      "rationale": "Business strategy consulting — unrelated to skill development",
+      "split": "test"
+    }
+  ]
+}
