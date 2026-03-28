@@ -111,9 +111,9 @@ After writing description, test immediately:
 
 ```bash
 # Use trigger-bench's OpenClaw-compatible version
-python3 ~/.openclaw/workspace/.agents/skills/trigger-bench/scripts/run_eval_openclaw.py \
+python3 {TRIGGER_BENCH_DIR}/scripts/run_eval_openclaw.py \
   --eval-set evals/trigger-evals.json \
-  --skill-path ~/.openclaw/workspace/.agents/skills/your-skill \
+  --skill-path {YOUR_SKILL_DIR} \
   --model claude-sonnet-4-5 \
   --runs-per-query 3 \
   --verbose
@@ -159,9 +159,9 @@ Write test cases in `evals/trigger-evals.json`:
 Run:
 ```bash
 # Use trigger-bench's OpenClaw-compatible version
-python3 ~/.openclaw/workspace/.agents/skills/trigger-bench/scripts/run_eval_openclaw.py \
+python3 {TRIGGER_BENCH_DIR}/scripts/run_eval_openclaw.py \
   --eval-set evals/trigger-evals.json \
-  --skill-path ~/.openclaw/workspace/.agents/skills/your-skill \
+  --skill-path {YOUR_SKILL_DIR} \
   --model claude-sonnet-4-5 \
   --runs-per-query 3 \
   --verbose
